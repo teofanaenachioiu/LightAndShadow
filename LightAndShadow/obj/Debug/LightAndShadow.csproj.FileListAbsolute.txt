@@ -1,0 +1,12 @@
+D:\LightAndShadow\LightAndShadow\bin\Debug\LightAndShadow.exe.config
+D:\LightAndShadow\LightAndShadow\bin\Debug\LightAndShadow.exe
+D:\LightAndShadow\LightAndShadow\bin\Debug\LightAndShadow.pdb
+D:\LightAndShadow\LightAndShadow\bin\Debug\System.Collections.Immutable.dll
+D:\LightAndShadow\LightAndShadow\obj\Debug\LightAndShadow.csprojAssemblyReference.cache
+D:\LightAndShadow\LightAndShadow\obj\Debug\LightAndShadow.Form1.resources
+D:\LightAndShadow\LightAndShadow\obj\Debug\LightAndShadow.Properties.Resources.resources
+D:\LightAndShadow\LightAndShadow\obj\Debug\LightAndShadow.csproj.GenerateResource.cache
+D:\LightAndShadow\LightAndShadow\obj\Debug\LightAndShadow.csproj.CoreCompileInputs.cache
+D:\LightAndShadow\LightAndShadow\obj\Debug\LightAndShadow.csproj.CopyComplete
+D:\LightAndShadow\LightAndShadow\obj\Debug\LightAndShadow.exe
+D:\LightAndShadow\LightAndShadow\obj\Debug\LightAndShadow.pdb
