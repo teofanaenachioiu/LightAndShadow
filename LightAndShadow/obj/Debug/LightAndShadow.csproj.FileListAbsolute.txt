@@ -24,3 +24,5 @@ D:\University-Courses\Grafica\LightAndShadow\LightAndShadow\obj\Debug\LightAndSh
 D:\University-Courses\Grafica\LightAndShadow\LightAndShadow\obj\Debug\LightAndShadow.pdb
 D:\University-Courses\Grafica\LightAndShadow\LightAndShadow\bin\Debug\MetroFramework.dll
 D:\University-Courses\Grafica\LightAndShadow\LightAndShadow\bin\Debug\MetroFramework.Fonts.dll
+D:\LightAndShadow\LightAndShadow\bin\Debug\MetroFramework.dll
+D:\LightAndShadow\LightAndShadow\bin\Debug\MetroFramework.Fonts.dll
