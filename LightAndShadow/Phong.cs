@@ -1,53 +1,52 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Numerics;
 
 namespace LightAndShadow
 {
-    public class Phong: Material
+    public class Phong : Material
     {
         public double f;
 
-        public override Colour Light(Vector3 n, Vector3 l, Vector3 v, Colour Ia, Colour Id, Colour Is)
+        public override Colour Light(Vector n, Vector l, Vector v, Colour Ia, Colour Id, Colour Is)
         {
-            Vector3 r;
-            Colour c, e, a;
-            e = pe * emissive;
-            a = pa * Ia * ambient;
+            Colour e = pe * emissive;
+            Colour a = pa * Ia;
 
-            //n = (Vector2)n.Clone(n);
-            n = Vector3.Normalize(n);
-            l = Vector3.Normalize(l);
-            v = Vector3.Normalize(v);
+            n = (Vector)n.Clone();
+            l = (Vector)l.Clone();
+            v = (Vector)v.Clone();
 
-            r = Vector3.Reflect(l, n);
+            Vector r = Vector.reflect(l, n);
 
-            // !!!!!!!!!!!!!!!!!!!!!!
-            Vector3 vector3 = n * l;
-            if (vector3.Z < 0.0)
+            n.normalize();
+            l.normalize();
+            v.normalize();
+            r.normalize();
+
+            double ln = l * n;
+            if (ln < 0.0)
             {
                 Id = new Colour(0.0, 0.0, 0.0);
                 Is = new Colour(0.0, 0.0, 0.0);
             }
-            // !!!!
-            if((r*v).Z < 0.0)
+
+            double rv = r * v;
+            if (rv < 0.0)
             {
                 Is = new Colour(0.0, 0.0, 0.0);
             }
-            //!!!!!!!!!!!!
-            c = e + a + pd * diffuse * Id * (n * l).X + ps * specular * Is * Math.Pow((r * v).X, f);
-            return c;
+
+            Colour d = pd * Id * ln;
+            Colour s = ps * Is * rv;
+            return  e + a + d + s;
         }
 
         public Phong()
         {
-            pd = 0.5;
-            ps = 0.4;
-            pa = 0.1;
+            pd = 0.4;
+            ps = 0.3;
+            pa = 0.3;
             pe = 0.0;
+
             f = 20.0;
 
             diffuse = new Colour(1.0, 1.0, 1.0);

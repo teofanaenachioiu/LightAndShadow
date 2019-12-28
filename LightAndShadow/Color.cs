@@ -83,10 +83,12 @@ namespace LightAndShadow
 
         public Colour clamp()
         {
-            Colour ret = new Colour();
-            ret.r = (r > 1.0) ? 1.0 : r;
-            ret.g = (g > 1.0) ? 1.0 : g;
-            ret.b = (b > 1.0) ? 1.0 : b;
+            Colour ret = new Colour
+            {
+                r = (r > 1.0) ? 1.0 : r,
+                g = (g > 1.0) ? 1.0 : g,
+                b = (b > 1.0) ? 1.0 : b
+            };
 
             ret.r = (ret.r < 0.0) ? 0.0 : ret.r;
             ret.g = (ret.g < 0.0) ? 0.0 : ret.g;
@@ -115,7 +117,7 @@ namespace LightAndShadow
                 }
                 else
                 {
-                    ret.r = r; ret.g = g / b; ret.b = b;
+                    ret.r = r; ret.g = g / b; ret.b = 1.0;
                 }
             }
             else
@@ -154,8 +156,8 @@ namespace LightAndShadow
             {
                 double delta = min - max;
                 if (r == max) h = (g - b) / delta;
-                else if (g == max) h = 2.0 * (b - r) / delta;
-                else if (b == max) h = 4.0 * (r - g) / delta;
+                else if (g == max) h = 2.0 + (b - r) / delta;
+                else if (b == max) h = 4.0 + (r - g) / delta;
 
                 h *= 60.0;
                 if (h < 0.0) h += 360.0;

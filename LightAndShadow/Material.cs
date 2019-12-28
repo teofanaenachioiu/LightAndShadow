@@ -1,15 +1,8 @@
-﻿using System;
-using System.Numerics;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LightAndShadow
+﻿namespace LightAndShadow
 {
     abstract public class Material
     {
-        abstract public Colour Light(Vector3 n, Vector3 l, Vector3 v, Colour Ia, Colour Id, Colour Is);
+        abstract public Colour Light(Vector n, Vector l, Vector v, Colour Ia, Colour Id, Colour Is);
 
         public Colour diffuse, specular, emissive, ambient;
         public double pd, ps, pa, pe;
@@ -32,6 +25,10 @@ namespace LightAndShadow
             specular = new Colour(1.0, 1.0, 1.0);
             emissive = new Colour(1.0, 0.0, 0.0);
             ambient = new Colour(1.0, 0.0, 0.0);
+
+            pt = 0.0;
+            pr = 0.0;
+            ir = 1.0;
         }
     }
 }
